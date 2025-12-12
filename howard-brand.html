@@ -3,7 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alex Chen | AI Strategy & Transformation</title>
+    
+    <!-- SEO Meta Tags -->
+    <title>Alex Chen | AI 轉型顧問 & LLM 解決方案專家</title>
+    <meta name="description" content="Alex Chen 是一位專業的 AI 轉型顧問，專精於 LLM 大型語言模型應用、RAG 企業知識庫建置與自動化工作流設計，協助企業將人工智能轉化為實際商業價值。">
+    <meta name="keywords" content="AI 轉型, AI Consultant, LLM 開發, RAG, Prompt Engineering, 自動化工作流, Python, Azure AI, 企業顧問, Alex Chen">
+    <meta name="author" content="Alex Chen">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook (社群分享優化) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://alex-ai-portfolio.com/">
+    <meta property="og:title" content="Alex Chen | Empowering Business with Intelligence">
+    <meta property="og:description" content="結合人類創造力與人工智慧。協助企業導入 LLM 與自動化流程，將技術轉化為可見的商業價值。">
+    <meta property="og:image" content="https://alex-ai-portfolio.com/og-image.jpg"> <!-- 建議替換為實際的預覽圖連結 -->
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://alex-ai-portfolio.com/">
+    <meta property="twitter:title" content="Alex Chen | AI Strategy & Transformation">
+    <meta property="twitter:description" content="專注於企業 AI 轉型、LLM 應用開發與自動化工作流的專家顧問。">
+    <meta property="twitter:image" content="https://alex-ai-portfolio.com/og-image.jpg">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -78,7 +98,7 @@
             border-color: rgba(37, 99, 235, 0.3);
         }
 
-        /* New: Hero Glass Layer for better text readability over background */
+        /* Hero Glass Layer */
         .hero-glass-layer {
             background: rgba(255, 255, 255, 0.4);
             backdrop-filter: blur(8px);
@@ -142,6 +162,21 @@
             0% { opacity: 0.4; transform: scale(1); }
             100% { opacity: 0.7; transform: scale(1.1); }
         }
+
+        /* Mobile Menu Transitions */
+        #mobile-menu {
+            transition: all 0.3s ease-in-out;
+            transform-origin: top;
+        }
+        .mobile-menu-open {
+            opacity: 1;
+            transform: scaleY(1);
+        }
+        .mobile-menu-closed {
+            opacity: 0;
+            transform: scaleY(0);
+            pointer-events: none;
+        }
     </style>
 </head>
 <body class="antialiased selection:bg-blue-100 selection:text-blue-900">
@@ -157,12 +192,15 @@
     <nav class="fixed w-full z-50 glass-panel border-b border-slate-200/50 transition-all duration-300" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
                 <div class="flex items-center gap-2">
                     <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center text-white text-xs font-bold shadow-glow">
                         AI
                     </div>
                     <a href="#" class="text-xl font-bold text-slate-800 tracking-tight">Alex<span class="text-slate-400">.Chen</span></a>
                 </div>
+
+                <!-- Desktop Menu -->
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-8">
                         <a href="#home" class="text-slate-600 hover:text-blue-600 font-medium transition px-3 py-2 text-sm">首頁</a>
@@ -174,28 +212,41 @@
                         </a>
                     </div>
                 </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-slate-600 hover:text-blue-600 focus:outline-none p-2">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="mobile-menu-closed absolute top-20 left-0 w-full bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-lg md:hidden">
+            <div class="px-4 pt-4 pb-6 space-y-2 flex flex-col text-center">
+                <a href="#home" class="mobile-link block px-3 py-3 text-slate-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg font-medium transition">首頁</a>
+                <a href="#about" class="mobile-link block px-3 py-3 text-slate-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg font-medium transition">關於我</a>
+                <a href="#solutions" class="mobile-link block px-3 py-3 text-slate-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg font-medium transition">解決方案</a>
+                <a href="#portfolio" class="mobile-link block px-3 py-3 text-slate-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg font-medium transition">精選案例</a>
+                <a href="#contact" class="mobile-link block mt-2 px-3 py-3 bg-blue-600 text-white rounded-lg font-medium shadow-md">預約諮詢</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section id="home" class="min-h-screen flex items-center justify-center pt-28 pb-10 relative overflow-hidden">
-        <!-- Added gap-12 lg:gap-24 to separate text from visual significantly -->
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center gap-12 lg:gap-24">
             
             <!-- Left Text Area -->
-            <!-- Wrapped in a container with relative positioning for the glass backdrop -->
             <div class="md:w-1/2 z-10 text-center md:text-left relative">
-                
-                <!-- UI/UX Fix: The 'Backdrop' Layer -->
-                <!-- This div creates a subtle frosted glass effect behind the text -->
-                <!-- It blurs the background blobs/particles so text remains legible and doesn't 'block' awkwardly -->
+                <!-- Glass Backdrop Layer -->
                 <div class="absolute -inset-6 lg:-inset-10 hero-glass-layer rounded-[3rem] -z-10 opacity-0 md:opacity-100 transition-opacity duration-700"></div>
 
                 <div class="inline-block px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-xs font-bold tracking-wide uppercase mb-6 animate-pulse">
                     AI Transformation Partner
                 </div>
-                <!-- Adjusted font sizes: md:text-5xl lg:text-7xl to prevent layout breaking -->
+                
                 <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-slate-900 leading-tight mb-6 tracking-tight relative z-20">
                     Empowering <br>
                     <span class="text-gradient">Business</span> with <br>
@@ -215,7 +266,6 @@
             </div>
 
             <!-- Right Visual (Abstract Tech) -->
-            <!-- Adjusted layout to ensure it doesn't overlap text -->
             <div class="md:w-1/2 mt-10 md:mt-0 relative flex justify-center md:justify-end">
                 <div class="relative w-full max-w-md lg:max-w-lg aspect-square animate-float">
                     <!-- Decorative Circles -->
@@ -254,8 +304,8 @@
                     
                     <div class="glass-card rounded-3xl p-8 relative z-10">
                         <div class="flex items-center gap-4 mb-6">
-                            <!-- Updated Profile Image -->
-                            <img src="rolex.png" alt="Alex Chen" class="w-16 h-16 rounded-full object-cover shadow-md border-2 border-white/80">
+                            <!-- User Image -->
+                            <img src="rolex.jpg" alt="Alex Chen" class="w-16 h-16 rounded-full object-cover shadow-md border-2 border-white/80">
                             <div>
                                 <h3 class="text-xl font-bold text-slate-800">Alex Chen</h3>
                                 <p class="text-blue-600 font-medium">AI Transformation Consultant</p>
@@ -388,7 +438,6 @@
                 <!-- Project 1 -->
                 <div class="bg-white rounded-2xl shadow-soft hover:shadow-xl transition-all duration-300 group border border-slate-100 overflow-hidden flex flex-col h-full">
                     <div class="h-48 bg-slate-100 relative overflow-hidden flex items-center justify-center">
-                         <!-- Abstract UI Representation -->
                          <div class="w-3/4 h-3/4 bg-white rounded-lg shadow-sm p-4 transform group-hover:scale-105 transition duration-500">
                              <div class="w-full h-2 bg-slate-100 rounded mb-2"></div>
                              <div class="w-2/3 h-2 bg-slate-100 rounded mb-4"></div>
@@ -474,7 +523,7 @@
     <!-- Contact Section -->
     <section id="contact" class="py-24 relative overflow-hidden">
         <div class="absolute inset-0 bg-slate-900 z-0"></div>
-        <!-- Decorative Mesh Background for Contact -->
+        <!-- Decorative Mesh Background -->
         <div class="absolute inset-0 opacity-20 z-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-500 via-slate-900 to-slate-900"></div>
 
         <div class="max-w-4xl mx-auto px-4 relative z-10 text-center">
@@ -497,7 +546,7 @@
                     <div class="hidden md:block w-px h-24 bg-white/20"></div>
 
                     <!-- Social Links -->
-                    <div class="flex flex-col gap-4 text-left">
+                    <div class="flex flex-col gap-4 text-left w-full md:w-auto">
                         <a href="https://linkedin.com/in/alex" class="flex items-center gap-4 text-white hover:text-blue-400 transition group p-3 rounded-xl hover:bg-white/5">
                             <div class="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white group-hover:scale-110 transition">
                                 <i class="fab fa-linkedin-in"></i>
@@ -536,7 +585,7 @@
         let particles = [];
 
         // Configuration
-        const particleCount = 60; // Fewer particles for cleaner look
+        const particleCount = 60; 
         const connectionDistance = 150;
         const particleSpeed = 0.3;
 
@@ -565,7 +614,7 @@
             draw() {
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fillStyle = 'rgba(148, 163, 184, 0.4)'; // Slate-400 very light
+                ctx.fillStyle = 'rgba(148, 163, 184, 0.4)'; 
                 ctx.fill();
             }
         }
@@ -592,7 +641,7 @@
 
                     if (distance < connectionDistance) {
                         ctx.beginPath();
-                        ctx.strokeStyle = `rgba(148, 163, 184, ${0.15 - distance/connectionDistance * 0.15})`; // Subtle lines
+                        ctx.strokeStyle = `rgba(148, 163, 184, ${0.15 - distance/connectionDistance * 0.15})`;
                         ctx.lineWidth = 1;
                         ctx.moveTo(particles[i].x, particles[i].y);
                         ctx.lineTo(particles[j].x, particles[j].y);
@@ -620,8 +669,34 @@
                 navbar.style.background = 'rgba(255, 255, 255, 0.9)';
             } else {
                 navbar.classList.remove('shadow-sm');
-                navbar.style.background = 'rgba(255, 255, 255, 0.7)'; // slightly more transparent at top
+                navbar.style.background = 'rgba(255, 255, 255, 0.7)'; 
             }
+        });
+
+        // --- Mobile Menu Toggle ---
+        const mobileMenuBtn = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        function toggleMobileMenu() {
+            const isClosed = mobileMenu.classList.contains('mobile-menu-closed');
+            if (isClosed) {
+                mobileMenu.classList.remove('mobile-menu-closed');
+                mobileMenu.classList.add('mobile-menu-open');
+            } else {
+                mobileMenu.classList.add('mobile-menu-closed');
+                mobileMenu.classList.remove('mobile-menu-open');
+            }
+        }
+
+        mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+
+        // Close menu when clicking a link
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('mobile-menu-closed');
+                mobileMenu.classList.remove('mobile-menu-open');
+            });
         });
 
     </script>
